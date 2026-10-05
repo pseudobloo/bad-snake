@@ -11,12 +11,12 @@
         {
             "label": "build windows",
             "type": "shell",
-            "command": "x86_64-w64-mingw32-gcc main.c -o build/snake.exe -O3 -static -I include -L lib -lraylib -lopengl32 -lgdi32 -lwinmm -mwindows"
+            "command": "x86_64-w64-mingw32-gcc main.c -o build/snake.exe -O3 -static -I raylib/windows/include -L raylib/windows/lib -lraylib -lopengl32 -lgdi32 -lwinmm -mwindows"
         },
         {
             "label": "build linux",
             "type": "shell",
-            "command": "gcc -g -Wall -Wextra -pedantic -std=c11 -lraylib -O3 -o build/snake main.c"
+            "command": "gcc main.c -o build/snake -I raylib/linux/include -L raylib/linux/lib -l:libraylib.a -lGL -lm -lpthread -ldl -lrt -lX11"
         }
         
     ]
